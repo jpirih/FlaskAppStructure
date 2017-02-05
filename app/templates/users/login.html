@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% from "form_macros.html" import render_field %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h1 class="page-header">Log In</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div class="well">
+            <form method="post" class="form-horizontal">
+                {{ form.csrf_token  }}
+                {{ render_field(form.email) }}
+                {{ render_field(form.password) }}
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <button class="btn btn-block btn-success" type="submit">
+                            <span class="glyphicon glyphicon-log-in"></span>
+                            Log In
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

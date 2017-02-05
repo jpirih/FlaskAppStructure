@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Page not Found {{ error.code }} {% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-2">
+            <div class="jumbotron">
+                <h1>Page not found {{ error.code }} </h1>
+                <p class="lead">Sorry this page does not exist Click Home button to return home</p>
+                <a href="{{ url_for('root.index') }}" class="btn btn-lg btn-primary" role="button">
+                    <span class="glyphicon glyphicon-home"></span>
+                    Home
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
